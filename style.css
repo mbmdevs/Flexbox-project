@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+html {
+	scroll-behavior:smooth;
+}
+
+body {
+	background:#f4f4f4;
+	font-family: 'Poppins', sans-serif;
+  font-size:16px;
+	line-height:1.5;
+	color:#333;
+	background:#a1c3ff;
+}
+img {
+	max-width: 100%;
+	padding:10px;
+}
+h1,h2 {
+	margin-bottom:15px;
+}
+ul {
+	list-style:none;
+}
+.container {
+	max-width:1100px;
+	margin:0 auto;
+	padding:0 30px;
+}
+.navbar {
+	background:#3474e6;
+	color:#fff;
+	height:15vh;
+}
+.logo {
+	font-size:x-large;
+	font-weight:bold;
+}
+.navbar a {
+	color:#fff;
+	text-decoration:none;
+	font-size:18px;
+	font-weight:bold;
+}
+.navbar a:hover {
+	color:lightblue;
+	font-size:20px;
+}
+.navbar .container {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	height:100%; /*For align-items to work it needs to have enough space/height*/
+}
+.navbar ul {
+	width:200px;
+	display:flex;
+	/*If you try to use justify-content to space them it wont work  coz the ul doesnt have enough space.You will need to add a width to the ul OR add margin-rights to the children*/
+}
+.navbar ul li {
+	margin-left:20px;
+}
+header {
+	/*Notice how we target the header & not the
+	 *header .container */
+	background-color:#0a51cc;
+	color:white;
+	min-height:400px;
+}
+.header h1 {
+	font-size:3rem;
+	font-weight:bold;
+	line-height:1.2;
+}
+header img {
+	max-width:400px;
+	margin-top:20px;
+	height:40vh;
+  border-radius:30px;
+}
+header .container {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:20px;
+}
+
+/*.container div {
+	flex-grow:1;
+}
+img {
+	flex-grow:1;
+}*/
+.boxes .container {
+	display:flex;
+	justify-content:space-between;
+}
+.box {
+	flex:1;
+	background:#0a5cc1;
+	color:#fff;
+	border-radius:10px;
+	margin:20px 10px;
+	padding:15px 20px;
+	/*Box Shadow: 1st value:shows  
+	 * 2nd value:shows the thickness of the shadow on 
+	 * Y-axis. 3rd value:shows the bluriness of the
+	 * shadow.Higher values result in stronger blur
+	 * lastly You give the color of the shadow */
+	box-shadow:0 3px 5px rgb(0,0,0,0.6);
+}
+.box i {
+	margin-right:10px;
+}
+/*
+ /*One way of adding the Media 	Queries*
+@media (min-width:900px){
+	header .container {
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		gap:20px;
+	}
+	.boxes .container {
+		display:flex;
+		justify-content:space-between;
+		flex-wrap:wrap;
+	}
+}*/
+
+/*Media gets applied when screen is under 768px */
+@media (max-width:768px){
+	.header .container {
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		/*justify-content:center is'nt working coz
+		 * the width is restricted.You need to add a bigger width or use text-align center;*/
+		text-align:center;
+		padding:20px;	
+	}	
+	.boxes .container {
+		/*Another way is to just change the display tto block instead of using flex-direction:center;*/
+		display:block;
+		text-align:center;
+	}
+	header img {
+		margin-top:10px;	
+}
